@@ -1,7 +1,7 @@
 <header class="site-header">
     <div class="container header-inner">
-        <a class="site-logo" href="{{ site.Home.RelPermalink }}">
-            {{ site.Title }}
+        <a class="site-logo" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }}">
+            {{ partial "logo.html" . }}
         </a>
         <nav class="site-nav">
             <ul class="nav-links">

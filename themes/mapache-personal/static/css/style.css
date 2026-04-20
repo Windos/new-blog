@@ -1,5 +1,6 @@
 /* Custom properties for Mapache Personal aesthetic */
 :root {
+    --logo-navy: #1b2a4e;
     --bg-color: #ffffff;
     --text-color: #333333;
     --text-muted: #6b7280;
@@ -11,6 +12,7 @@
 }
 
 [data-theme='dark'] {
+    --logo-navy: #f3f4f6;
     --bg-color: #111827;
     --text-color: #f3f4f6;
     --text-muted: #9ca3af;
@@ -71,6 +73,8 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-color);
+    display: flex;
+    align-items: center;
 }
 
 .site-nav {
