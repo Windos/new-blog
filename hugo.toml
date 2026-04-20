@@ -11,3 +11,6 @@ theme = 'mapache-personal'
   github = 'https://github.com/Windos'
   bluesky = 'https://bsky.app/profile/toastit.dev'
   linkedin = 'https://www.linkedin.com/in/windos/'
+
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"
