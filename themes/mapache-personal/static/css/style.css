@@ -98,6 +98,18 @@ a:hover {
     color: var(--accent-color, #3b82f6);
 }
 
+/* Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
 /* Theme Toggle */
 .theme-toggle {
     background: none;
@@ -359,5 +371,23 @@ a:hover {
 
 @media (max-width: 600px) {
     .hero-title { font-size: 2rem; }
-    .nav-links { gap: 1rem; }
+    .menu-toggle { display: flex; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        backdrop-filter: blur(10px);
+        padding: 1rem 20px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        gap: 1rem;
+    }
+    .nav-links.nav-open {
+        display: flex;
+    }
 }
