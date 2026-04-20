@@ -15,6 +15,7 @@
             <h1 class="post-title">{{ .Title }}</h1>
             {{- if eq .Type "posts" -}}
             <div class="post-meta">
+                {{ if site.Params.author }}<span class="post-author">By <a href="{{ "/about/" | relLangURL }}">{{ site.Params.author }}</a></span> &middot; {{ end }}
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
                 {{ with .Params.tags }}
                 <span class="post-tags">

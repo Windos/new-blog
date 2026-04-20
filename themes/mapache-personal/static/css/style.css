@@ -266,6 +266,14 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Tags Grid */
+.tags-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
 /* Single Post */
 .post-single {
     padding: 0 0 4rem;
@@ -390,5 +398,17 @@ a:hover {
     }
     .nav-links.nav-open {
         display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .tags-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tags-grid {
+        grid-template-columns: 1fr;
     }
 }
