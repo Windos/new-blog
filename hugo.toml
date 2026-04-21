@@ -8,6 +8,7 @@ theme = 'mapache-personal'
   author = 'Josh King'
   bio = 'Geek, Father, Walking Helpdesk.'
   avatar = '/images/avatar.png'
+  images = ['/images/avatar.png']
   github = 'https://github.com/Windos'
   bluesky = 'https://bsky.app/profile/toastit.dev'
   linkedin = 'https://www.linkedin.com/in/windos/'
