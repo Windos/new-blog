@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ block "title" . }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
+    <meta property="og:title" content="{{ .Title }} | {{ site.Title }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{- $image := "" -}}
+    {{- if .Params.images -}}
+        {{- $image = index .Params.images 0 -}}
+    {{- else if .Params.image -}}
+        {{- $image = .Params.image -}}
+    {{- else -}}
+        {{- $image = site.Params.avatar -}}
+    {{- end -}}
+    {{- if $image -}}
+    <meta property="og:image" content="{{ $image | absURL }}">
+    <meta name="twitter:image" content="{{ $image | absURL }}">
+    {{- end -}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }} | {{ site.Title }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
     
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
     
